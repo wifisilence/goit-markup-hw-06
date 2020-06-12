@@ -60,9 +60,66 @@
             эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button type="button" class="btn">Заказать услугу</button>
+          <button type="button" class="btn" data-open-modal>
+            Заказать услугу
+          </button>
         </div>
       </section>
+
+      <!--модадьное окно-->
+      <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+          <button data-close-modal>
+            <span class="menu-icon">
+              <svg width="30" height="30" viewBox="0 0 30 30"></svg>
+            </span>
+          </button>
+          <form>
+            <label for="name">Имя</label>
+            <input type="text" name="name" id="name" />
+            <br />
+            <label for="tel">Телефон</label>
+            <input type="tel" name="tel" id="tel" />
+            <br />
+            <label for="mail">Почта</label>
+            <input type="email" name="mail" id="mail" />
+            <br />
+            <textarea
+              name="comment"
+              rows="5"
+              cols="50"
+              placeholder="Оставьте комментарий"
+            ></textarea>
+            <br />
+            <input type="checkbox" name="" id="yes" value="yes" />
+            <label for="yes"
+              >Соглашаюсь с рассылкой и принимаю Условия договора</label
+            >
+            <br />
+
+            <button type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        const refs = {
+          openModalBtn: document.querySelector("[data-open-modal]"),
+          closeModalBtn: document.querySelector("[data-close-modal]"),
+          backdrop: document.querySelector("[data-backdrop]"),
+        };
+
+        refs.openModalBtn.addEventListener("click", toggleModel);
+        refs.closeModalBtn.addEventListener("click", toggleModel);
+
+        refs.backdrop.addEventListener("click", logBackdropClick);
+
+        function toggleModel() {
+          refs.backdrop.classList.toggle("is-hidden");
+        }
+        function logBackdropClick() {
+          console.log("Єто клик по бекдропу");
+        }
+      </script>
       <!--преимущества-->
       <section class="section advan">
         <div class="conteiner">
