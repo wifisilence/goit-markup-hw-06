@@ -221,11 +221,10 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 528px;
-  height: 581px;
+  width: auto;
+  height: auto;
 
   background-color: var(--white-color);
-  z-index: 99;
 }
 .modal-btn {
   position: absolute;
@@ -262,8 +261,8 @@ p {
   pointer-events: none;
 }
 .forma {
-  width: 448px;
-  /*height: 501px;*/
+  width: auto;
+  height: auto;
   margin: 40px;
 }
 .form-fild {
@@ -274,10 +273,23 @@ p {
 }
 
 .form-fild input {
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 42px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-size: 14px;
+}
+.modal-comm {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  width: 100%;
+  height: 120px;
+}
+.comment {
+  margin-bottom: 20px;
 }
 .form-head {
   padding-bottom: 30px;
@@ -292,7 +304,46 @@ p {
   transform: translateY(-50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.icon-modal {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  fill: #212121;
+}
 
+.chek-modal {
+  padding-bottom: 30px;
+}
+.checkbox {
+  -webkit-appearance: none;
+  position: absolute;
+}
+.chek-label {
+  display: flex;
+  align-items: center;
+}
+.chec-icon {
+  margin-right: 8px;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 2px solid #212121;
+}
+.checkbox:checked + .chec-icon {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url(../images/iconcheck.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+.police {
+  color: var(--accent-color);
+  text-decoration-color: var(--accent-color);
+}
 .hero-back {
   height: 600px;
   max-width: 1600px;
@@ -312,6 +363,10 @@ p {
 textarea {
   resize: none;
 }
+.form-input:focus ~ .icon-modal {
+  fill: var(--accent-color);
+}
+
 .form-input:focus + .form-label,
 .form-input:not(:placeholder-shown) + .form-label {
   color: var(--accent-color);
@@ -353,6 +408,31 @@ textarea {
 }
 .hero .btn:hover,
 .hero .btn:focus {
+  color: var(--white-color);
+  background: var(--accent-color);
+}
+.btn-submit {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.btn-submit {
+  padding: 10px 55px 10px 56px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  color: var(--secondary-text-color);
+  background: var(--white-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-submit:hover,
+.btn-submit:focus {
   color: var(--white-color);
   background: var(--accent-color);
 }
@@ -707,14 +787,71 @@ footer {
 }
 
 /*Форма Подписки*/
-
+.subscribe {
+  display: flex;
+  padding-left: 94px;
+  width: auto;
+}
 .subscribe .sub-title {
   color: var(--white-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
 }
+.subscribe input {
+  margin-top: 20px;
+  width: 358px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 16px;
+  background-color: #2f303a;
 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  font-size: 14px;
+}
+.btn-subscribe {
+  position: absolute;
+  padding: 10px 62px 10px 29px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  color: var(--secondary-text-color);
+  background: var(--white-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-subscribe:hover,
+.btn-subscribe:focus {
+  color: var(--white-color);
+  background: var(--accent-color);
+}
+.btn-footer {
+  align-items: flex-end;
+  width: auto;
+}
+.btn-subscribe {
+  top: 64%;
+  transform: translateY(-50%);
+}
+.btn-footer {
+  position: relative;
+  padding-left: 12px;
+}
+.btn-subscribe:hover + .futter-send {
+  background-color: crimson;
+}
+.futter-send {
+  position: absolute;
+  top: 50%;
+  left: 148px;
+  transform: translateY(-50%);
+}
 /*Создано*/
 
 .create {
