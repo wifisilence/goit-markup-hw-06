@@ -69,26 +69,50 @@
       <!--модадьное окно-->
       <div class="backdrop is-hidden" data-backdrop>
         <div class="modal">
-          <button data-close-modal>
-            <span class="menu-icon">
-              <svg width="30" height="30" viewBox="0 0 30 30"></svg>
-            </span>
+          <button data-close-modal class="modal-btn">
+            <svg class="item-icon-close">
+              <use href="./images/symbol-close.svg#icon-close"></use>
+            </svg>
           </button>
-          <form>
-            <label for="name">Имя</label>
-            <input type="text" name="name" id="name" />
-            <br />
-            <label for="tel">Телефон</label>
-            <input type="tel" name="tel" id="tel" />
-            <br />
-            <label for="mail">Почта</label>
-            <input type="email" name="mail" id="mail" />
-            <br />
+          <form class="forma">
+            <p class="form-head">Оставьте свои данные, мы вам перезвоним</p>
+
+            <div class="form-fild">
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                id="name"
+                placeholder=" "
+              />
+              <label for="name" class="form-label">Имя</label>
+            </div>
+
+            <div class="form-fild">
+              <input
+                class="form-input"
+                type="tel"
+                name="tel"
+                id="tel"
+                placeholder=" "
+              />
+              <label for="tel" class="form-label">Телефон</label>
+            </div>
+            <div class="form-fild">
+              <input
+                class="form-input"
+                type="email"
+                name="mail"
+                id="mail"
+                placeholder=" "
+              />
+              <label for="mail" class="form-label">Почта</label>
+            </div>
             <textarea
               name="comment"
               rows="5"
               cols="50"
-              placeholder="Оставьте комментарий"
+              placeholder="Комментарий"
             ></textarea>
             <br />
             <input type="checkbox" name="" id="yes" value="yes" />
